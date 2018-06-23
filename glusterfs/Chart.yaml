@@ -1,6 +1,7 @@
 apiVersion: v1
 description: A gluster chart for Kubernetes
-name: gluster-fs
+name: glusterfs
 version: 0.1.0-alpha1
+icon: https://fr.wikipedia.org/wiki/GlusterFS#/media/File:Gluster.gif
 keywords:
 - gluster
