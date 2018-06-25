@@ -11,7 +11,7 @@ persistence:
   enabled: true
 # storage class must be specified if you want to use dynamic volume provisioning
   storageClass: gluster
-  accessMode: ReadWrite
+  accessMode: ReadWriteMany
 # size must be specified if you want to use dynamic volume provisioning
   size: 20Gi
 # By default requested resources and resource limits are empty
