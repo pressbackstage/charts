@@ -67,16 +67,20 @@ spec:
         - name: gluster-brick7
           containerPort: 49159
         volumeMounts:
-          - name: gluster
+          - name: glusterd
             mountPath: /var/lib/glusterd
-            subPath: glusterd-conf
-          - name: gluster
+          - name: glusterb
             mountPath: /bricks
-            subPath: bricks
 {{- if ( not .Values.persistence.enabled ) }}
       volumes:
-      - name: gluster
-        emptyDir: {}
+      - hostPath:
+          path: /data/glusterd
+          type: DirectoryOrCreate
+        name: glusterd
+      - hostPath:
+          path: /data/glusterb
+          type: DirectoryOrCreate
+        name: glusterb
 {{- else }}
   volumeClaimTemplates:
   - metadata:
