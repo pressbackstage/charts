@@ -5,15 +5,6 @@ imageTag: latest
 # Default objects' name is {{.Release.Name}}-{{.Chart.Name}}
 nameOverride:
 replicas: 3
-persistence:
-# if persistance is disabled, gluster nodes will be started with configuration and data mapped to emptyDir volumes,
-#  otherwise persistent volume claims will be created or expected to exist
-  enabled: false
-# storage class must be specified if you want to use dynamic volume provisioning
-  storageClass: glusterfs
-  accessMode: ReadWriteMany
-# size must be specified if you want to use dynamic volume provisioning
-  size: 15Gi
 # By default requested resources and resource limits are empty
 # Specify some values if you want the pods to be in a different QoS class
 resources:
