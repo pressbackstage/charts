@@ -41,6 +41,9 @@ spec:
 {{ .Values.resources.gluster | toYaml | indent 10 }}
         securityContext:
           privileged: true
+        ports:
+        - name: gluster-daemon
+          containerPort: 24007
         volumeMounts:
           - name: glusterd
             mountPath: /var/lib/glusterd
