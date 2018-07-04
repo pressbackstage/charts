@@ -14,8 +14,7 @@ spec:
     port: 24007
   selector:
     app: {{ template "fullname" . }}
-
-    
+---
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
