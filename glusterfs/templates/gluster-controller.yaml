@@ -3,9 +3,9 @@ kind: Service
 metadata:
   name: {{ template "fullname" . }}
 spec:
+  clusterIP: None
   selector:
     app: {{ template "fullname" . }}
-  clusterIP: None
   ports:
   - name: gluster-daemon
     port: 24007
