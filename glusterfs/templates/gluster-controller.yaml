@@ -8,12 +8,12 @@ metadata:
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
 spec:
+  selector:
+    app: {{ template "fullname" . }}
   clusterIP: None
   ports:
   - name: gluster-daemon
     port: 24007
-  selector:
-    app: {{ template "fullname" . }}
 ---
 apiVersion: apps/v1
 kind: StatefulSet
